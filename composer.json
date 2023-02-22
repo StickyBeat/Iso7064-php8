@@ -1,35 +1,41 @@
 {
-		"name": "soundways/iso7064",
-		"description": "An ISO 7064 check character calculator created for GRid codes",
-		"keywords": ["iso", "check", "character", "GRid"],
-		"homepage": "https://github.com/soundways/Iso7064-php",
-		"license": "MIT",
-		"authors": [
-				{
-						"name": "Bridget Macfarlane",
-						"email": "bridget@soundways.com",
-						"homepage": "https://soundways.com",
-						"role": "Developer"
-				}
-		],
-		"require": {
-				"php": "^7.1"
-		},
-		"suggest": {
-			"ext-mbstring": "mbstring is required, but can be substituted with symfony/polyfill-mbstring when ext-mbstring is unavailable"
-		},
-		"autoload": {
-				"psr-0": {
-						"Iso7064\\": "src/",
-						"Soundways\\Iso7064\\": "src/",
-						"Soundways_Iso7064_": "src/"
-				},
-				"psr-4": {
-						"Iso7064\\": "src/",
-						"Soundways\\Iso7064\\": "src/"
-				}
-		},
-		"require-dev": {
-				"phpunit/phpunit": "^8.5"
-		}
+  "name": "stickybeat/iso7064-php8",
+  "type": "library",
+  "description": "An ISO 7064 check character calculator created for GRid codes",
+  "keywords": [
+    "iso",
+    "check",
+    "character",
+    "GRid"
+  ],
+  "homepage": "https://github.com/stickybeat/Iso7064-php8",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Örjan Classon",
+      "email": "orjan@stickybeat.se",
+      "homepage": "https://stickybeat.se",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2"
+  },
+  "suggest": {
+    "ext-mbstring": "mbstring is required, but can be substituted with symfony/polyfill-mbstring when ext-mbstring is unavailable"
+  },
+  "autoload": {
+    "psr-0": {
+      "Iso7064\\": "src/",
+      "Soundways\\Iso7064\\": "src/",
+      "Soundways_Iso7064_": "src/"
+    },
+    "psr-4": {
+      "Iso7064\\": "src/",
+      "Soundways\\Iso7064\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5"
+  }
 }

@@ -10,6 +10,8 @@
 
 namespace Soundways\Iso7064;
 
+use Soundways\Iso7064\Iso7064FormattingException;
+
 /**
  * This is the Mod class.
  * To implement a new Modulus, extend this class
@@ -61,6 +63,7 @@ abstract class Mod
 	 * @return void
 	 */
 	public function __construct(string $code) {
+    $this->validateInput($code);
 		$this->code = self::parseCode($code);
 	}
 	
@@ -97,6 +100,14 @@ abstract class Mod
 		$valid_check_char = $this->generateCheckChar(substr($this->code, 0, -1));
 		return ($check_char == $valid_check_char);
 	}
+
+  private function validateInput(string $code): void {
+    preg_match_all('/[^0-9A-Za-z]/', $code, $matches);
+    if (!empty($matches[0])) {
+      throw new Iso7064FormattingException('Invalid characters in code: '
+                                . implode(', ', $matches[0]));
+    }
+  }
 	
 	/**
 	 * Setter for $this->code.
@@ -106,6 +117,7 @@ abstract class Mod
 	 * @return void
 	 */
 	public function setCode(string $code): void {
+    $this->validateInput($code);
 		$this->code = self::parseCode($code);
 	}
 	
